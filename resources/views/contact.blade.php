@@ -7,6 +7,17 @@
 @endsection
 
 @section('content')
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>
+                        {{ $error }}
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form action="{{ route('contact-form') }}" method="post">
         @csrf
         <div class="mt-20">
@@ -21,7 +32,7 @@
 
         <div class="mt-20">
             <label for="phone">Enter your phone</label>
-            <input type="number" name="phone" placeholder="Enter your phone" id="phone" class="form-control">
+            <input type="tel" name="phone" placeholder="38 096 1234 567" id="phone" class="form-control">
         </div>
 
         <div class="mt-20">
@@ -34,6 +45,6 @@
             <textarea name="message" placeholder="Enter your message" id="message" class="form-control"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-success mt-20">Enter</button>
+        <button type="submit" class="btn btn-success mt-20">Сonfirm</button>
     </form>
 @endsection
