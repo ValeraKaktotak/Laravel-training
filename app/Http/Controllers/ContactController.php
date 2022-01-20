@@ -17,6 +17,6 @@ class ContactController extends Controller{
 
         $contact->save();
 
-        return redirect()->route('home-page');
+        return redirect()->route('home-page')->with('success', 'Info was added');
     }
 }

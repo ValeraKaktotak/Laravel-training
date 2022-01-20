@@ -16,6 +16,7 @@
                 <h1 class="display-4 fw-normal">@yield('page-title')</h1>
             </div>
             <div class="row">
+                @include('includes/messages')
                 <div class="col-3">
                     @include('includes/aside')
                 </div>
