@@ -24,10 +24,10 @@ class ValidationRequest extends FormRequest
     public function rules()
     {
         return [
-            'subject' => 'required|min:10|max:50',
-            'message' => 'required|min:15|max:500',
+            'subject' => 'required|max:50',
+            'message' => 'required|max:500',
             'email' => 'email:rfc,dns',
-            'phone' => 'required|min:13|max:13|numeric',
+            'phone' => 'required',
             'name' => 'required'
         ];
     }
